@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2e0637403de7202223924719e3238acc",
+    "content-hash": "3a208d76323a47df4dca2671b7e537cc",
     "packages": [
         {
             "name": "jrmajor/fluent",
