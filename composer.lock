@@ -4,106 +4,42 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d2f6b3f19c0170084b604b9e639b4129",
+    "content-hash": "2e0637403de7202223924719e3238acc",
     "packages": [
         {
-            "name": "johngrogg/ics-parser",
-            "version": "v3.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/u01jmg3/ics-parser.git",
-                "reference": "cc5cc7c6f934ec129c4e207828eb27315e1b61fb"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/u01jmg3/ics-parser/zipball/cc5cc7c6f934ec129c4e207828eb27315e1b61fb",
-                "reference": "cc5cc7c6f934ec129c4e207828eb27315e1b61fb",
-                "shasum": ""
-            },
-            "require": {
-                "ext-mbstring": "*",
-                "php": ">=5.3.9"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^5|^9",
-                "squizlabs/php_codesniffer": "~3.6.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "ICal": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Jonathan Goode",
-                    "role": "Developer/Owner"
-                },
-                {
-                    "name": "John Grogg",
-                    "email": "john.grogg@gmail.com",
-                    "role": "Developer/Prior Owner"
-                }
-            ],
-            "description": "ICS Parser",
-            "homepage": "https://github.com/u01jmg3/ics-parser",
-            "keywords": [
-                "iCalendar",
-                "ical",
-                "ical-parser",
-                "ics",
-                "ics-parser",
-                "ifb"
-            ],
-            "support": {
-                "issues": "https://github.com/u01jmg3/ics-parser/issues",
-                "source": "https://github.com/u01jmg3/ics-parser/tree/v3.2.0"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/sponsors/u01jmg3",
-                    "type": "github"
-                }
-            ],
-            "time": "2022-07-15T18:19:42+00:00"
-        },
-        {
             "name": "jrmajor/fluent",
-            "version": "v0.4.1",
+            "version": "v0.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jrmajor/fluent-php.git",
-                "reference": "3cf173fecd18782a2a8d982f3c9caa6acb54abf0"
+                "reference": "5c89f9d8852d9285a55c1c3e865fca836098a7ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jrmajor/fluent-php/zipball/3cf173fecd18782a2a8d982f3c9caa6acb54abf0",
-                "reference": "3cf173fecd18782a2a8d982f3c9caa6acb54abf0",
+                "url": "https://api.github.com/repos/jrmajor/fluent-php/zipball/5c89f9d8852d9285a55c1c3e865fca836098a7ea",
+                "reference": "5c89f9d8852d9285a55c1c3e865fca836098a7ea",
                 "shasum": ""
             },
             "require": {
                 "ext-intl": "*",
-                "jrmajor/pluralrules": "^1.0",
-                "php": "~8.0.0 || ~8.1.0"
+                "jrmajor/pluralrules": "^1.1",
+                "php": "8.1 - 8.2"
             },
             "require-dev": {
-                "azjezz/psl": "^1.9",
+                "azjezz/psl": "^2.3",
                 "ext-json": "*",
                 "ext-simplexml": "*",
-                "jrmajor/cs": "^0.3.3",
-                "nunomaduro/collision": "^5.10",
-                "php-standard-library/psalm-plugin": "^1.1",
+                "jrmajor/cs": "^0.4.6",
+                "jrmajor/exporter": "dev-master#6ada458",
+                "nunomaduro/collision": "^6.3",
+                "php-standard-library/psalm-plugin": "^2.2",
                 "phpbench/phpbench": "^1.2",
-                "phpunit/phpunit": "10.0.x-dev",
-                "psalm/plugin-phpunit": "^0.16.1",
-                "sebastian/diff": "5.0.x-dev as 4.0.4",
-                "symfony/console": "^5.4",
-                "symfony/var-dumper": "^5.4",
-                "vimeo/psalm": "^4.17"
+                "phpunit/phpunit": "10.0.x-dev#74bdbf5",
+                "psalm/plugin-phpunit": "^0.18.0",
+                "sebastian/diff": "5.0.x-dev#7d8cf26 as 4.0.4",
+                "symfony/console": "^6.2",
+                "symfony/var-dumper": "^6.2",
+                "vimeo/psalm": "^5.1"
             },
             "type": "library",
             "autoload": {
@@ -141,7 +77,7 @@
             ],
             "support": {
                 "issues": "https://github.com/jrmajor/fluent-php/issues",
-                "source": "https://github.com/jrmajor/fluent-php/tree/v0.4.1"
+                "source": "https://github.com/jrmajor/fluent-php/tree/v0.4.2"
             },
             "funding": [
                 {
@@ -149,37 +85,45 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-01-27T17:43:02+00:00"
+            "time": "2022-12-26T14:52:54+00:00"
         },
         {
             "name": "jrmajor/pluralrules",
-            "version": "v1.0.1",
+            "version": "v1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jrmajor/pluralrules.git",
-                "reference": "3cf7098257af320969789794aed6f08390bb3578"
+                "reference": "31e74e7df48e5c182e8f9c85684940e9937bb45d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jrmajor/pluralrules/zipball/3cf7098257af320969789794aed6f08390bb3578",
-                "reference": "3cf7098257af320969789794aed6f08390bb3578",
+                "url": "https://api.github.com/repos/jrmajor/pluralrules/zipball/31e74e7df48e5c182e8f9c85684940e9937bb45d",
+                "reference": "31e74e7df48e5c182e8f9c85684940e9937bb45d",
                 "shasum": ""
             },
             "require": {
                 "ext-intl": "*",
-                "php": "~8.0.0 || ~8.1.0"
+                "php": "8.1 - 8.3"
             },
             "require-dev": {
-                "azjezz/psl": "^1.9",
+                "azjezz/psl": "^2.8",
                 "hoa/compiler": "~3.17",
-                "jrmajor/cs": "^0.3.3",
-                "nunomaduro/collision": "^5.10",
-                "pestphp/pest": "^1.21",
-                "phpstan/phpstan": "^1.3",
-                "symfony/console": "^5.4",
-                "symfony/var-dumper": "^5.4"
+                "jrmajor/cs": "^0.5.4",
+                "nette/php-generator": "^4.1",
+                "nunomaduro/collision": "^7.10",
+                "php-standard-library/phpstan-extension": "^1.0",
+                "phpstan/phpstan": "^1.10",
+                "phpunit/phpunit": "^10.4",
+                "symfony/console": "^6.3",
+                "symfony/var-dumper": "^6.3",
+                "vaimo/composer-patches": "^5.1"
             },
             "type": "library",
+            "extra": {
+                "patcher": {
+                    "search": "patches"
+                }
+            },
             "autoload": {
                 "files": [
                     "src/operands.php",
@@ -215,7 +159,7 @@
             ],
             "support": {
                 "issues": "https://github.com/jrmajor/pluralrules/issues",
-                "source": "https://github.com/jrmajor/pluralrules/tree/v1.0.1"
+                "source": "https://github.com/jrmajor/pluralrules/tree/v1.1.2"
             },
             "funding": [
                 {
@@ -223,20 +167,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-01-02T22:51:29+00:00"
+            "time": "2023-11-24T23:41:05+00:00"
         },
         {
             "name": "tecnickcom/tcpdf",
-            "version": "6.5.0",
+            "version": "6.6.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tecnickcom/TCPDF.git",
-                "reference": "cc54c1503685e618b23922f53635f46e87653662"
+                "reference": "5fce932fcee4371865314ab7f6c0d85423c5c7ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tecnickcom/TCPDF/zipball/cc54c1503685e618b23922f53635f46e87653662",
-                "reference": "cc54c1503685e618b23922f53635f46e87653662",
+                "url": "https://api.github.com/repos/tecnickcom/TCPDF/zipball/5fce932fcee4371865314ab7f6c0d85423c5c7ce",
+                "reference": "5fce932fcee4371865314ab7f6c0d85423c5c7ce",
                 "shasum": ""
             },
             "require": {
@@ -265,7 +209,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "LGPL-3.0-only"
+                "LGPL-3.0-or-later"
             ],
             "authors": [
                 {
@@ -287,7 +231,7 @@
             ],
             "support": {
                 "issues": "https://github.com/tecnickcom/TCPDF/issues",
-                "source": "https://github.com/tecnickcom/TCPDF/tree/6.5.0"
+                "source": "https://github.com/tecnickcom/TCPDF/tree/6.6.5"
             },
             "funding": [
                 {
@@ -295,7 +239,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2022-08-12T07:50:54+00:00"
+            "time": "2023-09-06T15:09:26+00:00"
         }
     ],
     "packages-dev": [],
@@ -306,5 +250,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }
