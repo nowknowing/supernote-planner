@@ -38,9 +38,9 @@ jobs:
     - name: Build planner
       run: php build.php
     - name: Release
-        uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
-        with:
+      uses: softprops/action-gh-release@v1
+      if: startsWith(github.ref, 'refs/tags/')
+      with:
           files: output/**.pdf
 
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
