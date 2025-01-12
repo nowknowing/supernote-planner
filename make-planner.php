@@ -46,7 +46,7 @@ $config = [
     'planner_only' => true,
     'monday_start' => $options[0] === '1',
     'note_style' => $options[1] === '1' ? 'dot' : 'lined',
-    'extra_amount' => $options[2] === '1' ? 40 : 200,
+    'extra_amount' => $options[2] === '1' ? 10 : 10,
     '12hr' => $options[3] === '1',
     'night_shift' => $options[4] === '1',
 ];

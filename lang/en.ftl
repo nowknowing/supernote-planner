@@ -3,8 +3,8 @@ fonts = fonts
     .font1 = merriweather
     .font2 = opensans
 
-full-date = {$weekday}, {$month} {$date}
-short-date = {$date} {$weekday}
+full-date = {$weekday}, {$date} {$month}
+short-date = {$date}  {$weekday}
 
 quarter = Quarter
     .q1 = Q1
@@ -59,28 +59,28 @@ weekday = Weekday
     .m5 = Fri
     .m6 = Sat
     .m7 = Sun
-    .s0 = S
-    .s1 = M
-    .s2 = T
-    .s3 = W
-    .s4 = T
-    .s5 = F
-    .s6 = S
-    .s7 = S
+    .s0 = SUN
+    .s1 = MON
+    .s2 = TUE
+    .s3 = WED
+    .s4 = THU
+    .s5 = FRI
+    .s6 = SAT
+    .s7 = SUN
 
-cal = Cal
-planner = Planner
-note = Note
-task = Task
+cal = Calendar
+planner = Schedule
+note = Notes
+task = Tasks
 diary = Diary
 event = Event
 list = List
-w-task = W:Task
+w-task = W:Tasks
 
-my-goals = MY GOALS
-daily-grateful = THINGS I AM GRATEFUL FOR
-daily-best-things = BEST THINGS THAT HAPPENED TODAY
-daily-log = MY DAILY LOG
+my-goals = GOALS
+daily-grateful = MOTIVATION
+daily-best-things = NICE THINGS
+daily-log = LOG
 
 note-index = Notes Index
 list-index = Lists Index

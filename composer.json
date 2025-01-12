@@ -10,7 +10,6 @@
     }
   ],
   "require": {
-    "johngrogg/ics-parser": "^3.2.0",
     "tecnickcom/tcpdf": "^6.5.0",
     "jrmajor/fluent": "^0.4.1"
   }
