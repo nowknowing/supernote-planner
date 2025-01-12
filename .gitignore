@@ -1,6 +1,5 @@
 .idea/
 vendor/
-output/*
 !output/.gitkeep
 custom-templates/*
 !custom-templates/.gitkeep
