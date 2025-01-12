@@ -78,29 +78,73 @@ function planner_agenda_format_time_h(int $time, bool $hr12): string
     }
 }
 
+// function planner_daily_template(TCPDF $pdf, float $margin, bool $hr12, bool $night_shift, float $agenda_size, int $line_per_hour, float $agenda_line_height, float $task_line_size): void
+// {
+//     [$start_x, $start_y, $width, $height] = planner_size_dimensions($margin);
+//     $time_start = 0;
+//     $time_end = 23;
+//
+//     if ($night_shift) {
+//         $time_start = 19;
+//         $time_end = 24 + 8;
+//     }
+//
+//     $pdf->setLineStyle([
+//         'width' => 0.1,
+//         'cap' => 'butt',
+//         'color' => Colors::g(0)
+//     ]);
+//     $pdf->setFillColor(...Colors::g(0));
+//     $pdf->setTextColor(...Colors::g(0));
+//     $pdf->setFont(Loc::_('fonts.font2'));
+//
+//     // Agenda
+//     $hours = $time_end - $time_start + 1;
+//     $per_hour = ($height - 2 * $margin) / $hours;
+//     $per_line = $per_hour / $line_per_hour;
+//
+//     $pdf->setFontSize(Size::fontSize($per_line, $agenda_line_height));
+//     $pdf->setTextColor(...Colors::g(6));
+//
+//     $y = $start_y + $margin;
+//     for ($h = $time_start; $h <= $time_end; $h++) {
+//         $pdf->setAbsXY($start_x, $y);
+//         $pdf->Cell($agenda_size, $per_line, planner_agenda_format_time_h($h, $hr12), align: 'L');
+//         for ($i = 1; $i <= $line_per_hour; $i++)
+//             $pdf->Line($start_x, $y + $i * $per_line, $start_x + $agenda_size, $y + $i * $per_line);
+//         $y += $per_hour;
+//     }
+//
+//     $start_x += $margin + $agenda_size;
+//     $width -= $margin + $agenda_size;
+//
+//     // Task list
+//     planner_draw_note_area($pdf, $start_x, $start_y, $width, $height, 'checkbox', $task_line_size);
+// }
 function planner_daily_template(TCPDF $pdf, float $margin, bool $hr12, bool $night_shift, float $agenda_size, int $line_per_hour, float $agenda_line_height, float $task_line_size): void
 {
     [$start_x, $start_y, $width, $height] = planner_size_dimensions($margin);
-    $time_start = 7;
-    $time_end = 20;
+    $time_start = 0;
+    $time_end = 23;
 
     if ($night_shift) {
         $time_start = 19;
         $time_end = 24 + 8;
     }
 
+    // Set line style once for consistent thickness
     $pdf->setLineStyle([
-        'width' => 0.1,
+        'width' => 0.07,  // Consistent thickness
         'cap' => 'butt',
-        'color' => Colors::g(0)
+        'color' => Colors::g(10)
     ]);
     $pdf->setFillColor(...Colors::g(0));
     $pdf->setTextColor(...Colors::g(0));
     $pdf->setFont(Loc::_('fonts.font2'));
 
-    // Agenda
-    $hours = $time_end - $time_start + 1;
-    $per_hour = ($height - 2 * $margin) / $hours;
+    // Calculate per-hour height to fully utilize the column space
+    $total_hours = 21;  // 13.5 full hours for 6-23 and 5 half hours for 0-5
+    $per_hour = ($height - 2 * $margin) / $total_hours;
     $per_line = $per_hour / $line_per_hour;
 
     $pdf->setFontSize(Size::fontSize($per_line, $agenda_line_height));
@@ -108,12 +152,25 @@ function planner_daily_template(TCPDF $pdf, float $margin, bool $hr12, bool $nig
 
     $y = $start_y + $margin;
     for ($h = $time_start; $h <= $time_end; $h++) {
+        // Set the label position for each hour
         $pdf->setAbsXY($start_x, $y);
         $pdf->Cell($agenda_size, $per_line, planner_agenda_format_time_h($h, $hr12), align: 'L');
-        for ($i = 1; $i <= $line_per_hour; $i++)
-            $pdf->Line($start_x, $y + $i * $per_line, $start_x + $agenda_size, $y + $i * $per_line);
-        $y += $per_hour;
+
+        // Draw the top line for the hour slot
+        $pdf->Line($start_x, $y, $start_x + $agenda_size, $y);
+
+        if ($h >= 0 && $h <= 5) {
+            // For hours 0 to 5, use half the height and only one line at the top
+            $y += $per_hour / 2;  // Move down by half of per_hour height
+        } else {
+            // For other hours, move down by the full hour height
+            $y += $per_hour;
+        }
+
+        // Draw the bottom line for the hour slot
+        $pdf->Line($start_x, $y, $start_x + $agenda_size, $y);
     }
+
 
     $start_x += $margin + $agenda_size;
     $width -= $margin + $agenda_size;
@@ -121,6 +178,9 @@ function planner_daily_template(TCPDF $pdf, float $margin, bool $hr12, bool $nig
     // Task list
     planner_draw_note_area($pdf, $start_x, $start_y, $width, $height, 'checkbox', $task_line_size);
 }
+
+
+
 
 Templates::register('planner-daily', 'planner_daily_template');
 

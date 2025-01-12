@@ -205,7 +205,7 @@ function draw_dot_grid(TCPDF $pdf, $x, $y, $w, $h, $size): void
 
 function draw_table(TCPDF $pdf, $x, $y, $w, $h, $size): void
 {
-    $pdf->setLineStyle(['width' => 0.1, 'cap' => 'butt', 'color' => Colors::g(0)]);
+    $pdf->setLineStyle(['width' => 0.09, 'cap' => 'butt', 'color' => Colors::g(0)]);
     for ($yy = $y; $yy <= $y + $h; $yy += $size) {
         $pdf->Line($x, $yy, $x + $w, $yy);
     }
@@ -218,7 +218,7 @@ function draw_checkbox(TCPDF $pdf, $x, $y, $w, $h, $size): void
 {
     $s2 = $size / 2;
     $s4 = $size / 4;
-    $pdf->setLineStyle(['width' => 0.1, 'cap' => 'butt', 'color' => Colors::g(0)]);
+    $pdf->setLineStyle(['width' => 0.08, 'cap' => 'butt', 'color' => Colors::g(1)]);
     for ($yy = $y; $yy <= $y + $h; $yy += $size) {
         $pdf->Line($x, $yy, $x + $w, $yy);
 
@@ -229,7 +229,7 @@ function draw_checkbox(TCPDF $pdf, $x, $y, $w, $h, $size): void
 
 function draw_rules(TCPDF $pdf, $x, $y, $w, $h, $size, $verticals = false): void
 {
-    $pdf->setLineStyle(['width' => 0.1, 'cap' => 'butt', 'color' => Colors::g(0)]);
+    $pdf->setLineStyle(['width' => 0.07, 'cap' => 'butt', 'color' => Colors::g(10)]);
     for ($yy = $y; $yy <= $y + $h; $yy += $size) {
         $pdf->Line($x, $yy, $x + $w, $yy);
     }

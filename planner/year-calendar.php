@@ -56,14 +56,19 @@ function yearly_month_calendar(TCPDF $pdf, Month $month, bool $start_monday, flo
     $pdf->setFontSize(Size::fontSize($y_step, $day_line_height));
 
     $pdf->setAbsXY($x, $y += $y_step);
-    $pdf->Cell($x_step, $y_step, Loc::_('week.s'), align: 'C');
+    $pdf->Cell($x_step, $y_step, ' ', align: 'C');
 
     $weekday = $start_monday ? 1 : 0;
     for ($i = 0; $i < 7; $i++) {
+        $full_weekday = Loc::_(sprintf('weekday.s%d', $i + $weekday));
+
+        // Extract only the first character (e.g., 'M', 'T')
+        $short_weekday = substr($full_weekday, 0, 1);
+
         $pdf->Cell(
             $x_step,
             $y_step,
-            Loc::_(sprintf('weekday.s%d', $i + $weekday)),
+            $short_weekday,
             align: 'C'
         );
     }
